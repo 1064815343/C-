@@ -264,3 +264,75 @@ int main(){
 }
 
 练习1.21
+#include<iostream>
+#include "Sales_item.h"
+
+int main(){
+    Sales_item book1, book2;
+    std::cin >> book1 >> book2;
+    std::cout << book1 + book2 << std::endl;
+    return 0;
+}
+
+练习1.22
+#include<iostream>
+#include "Sales_item.h"
+
+int main(){
+    Sales_item book;
+    while (std::cin >> book)
+        book += book;
+    std::cout << book<< std::endl;
+    return 0;
+}
+
+---------------------1.5.2节练习------------------------
+练习1.23，1.24
+#include<iostream>
+#include "Sales_item.h"
+
+int main(){
+    Sales_item curr_book, book;
+    int cnt = 0;
+    if (std::cin >> book) {
+        cnt = 1;
+        curr_book = book;
+        while (std::cin >> book) {
+            if (book.isbn() == curr_book.isbn())
+                cnt++;
+            else{
+                std::cout << "The ISBN: " << curr_book.isbn() << " occurs " << cnt << " times." << std::endl;
+                cnt = 1;
+                curr_book = book;
+            }
+        }
+        std::cout << "The ISBN: " << curr_book.isbn() << " occurs " << cnt << " times." << std::endl;
+    }
+    return 0;
+}
+
+---------------------1.6节练习------------------------
+练习1.25
+#include<iostream>
+#include "Sales_item.h"
+
+int main(){
+    Sales_item total;
+    int cnt = 0;
+    if (std::cin >> total) {
+        Sales_item trans;
+        while (std::cin >> trans) {
+            if (total.isbn() == trans.isbn())
+                total += trans;
+            else{
+                std::cout << total <<  std::endl;
+                total = trans;
+            }
+        }
+        std::cout << total <<  std::endl;
+    } else {
+        std::cerr << "No data?!" << std::endl;
+        return -1;
+    }
+    return 0;
+}
