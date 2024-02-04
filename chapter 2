@@ -37,4 +37,12 @@ int main(){
 
 ---------------------2.1.3节练习------------------------
 练习2.5
-1) 'a':char  L'a':wchar_t  
+1) 'a':char  L'a':宽字符  "a":string  L"a":宽字符串
+2)  10:int   10u:unsigned int  10L:long  10uL:unsigned long  012:八进制  0xc:十六进制
+3)  3.14:float  3.14f:float  3.14L:long double
+4)  10:int  10u:unsigned int  10.:     10e-2:float
+
+练习2.6
+有区别，第一行是二进制，第二行是八进制
+
+练习2.7
