@@ -37,12 +37,75 @@ int main(){
 
 ---------------------2.1.3节练习------------------------
 练习2.5
-1) 'a':字符字面值  L'a':宽字符字面值  "a":字符串字面值  L"a":宽字符串字面值
-2)  10:十进制整型   10u:十进制无符号整型  10L:十进制长整型 10uL:十进制无符号长整型  012:八进制整型  0xc:十六进制整型
-3)  3.14:float  3.14f:float  3.14L:long double
-4)  10:int  10u:unsigned int  10.:float  10e-2:float
+a) 'a':字符字面值  L'a':宽字符字面值  "a":字符串字面值  L"a":宽字符串字面值
+b)  10:十进制整型   10u:十进制无符号整型  10L:十进制长整型 10uL:十进制无符号长整型  012:八进制整型  0xc:十六进制整型
+c)  3.14:float  3.14f:float  3.14L:long double
+d)  10:int  10u:unsigned int  10.:float  10e-2:float
 
 练习2.6
 有区别，第一行是二进制，第二行是八进制
 
 练习2.7
+a)Who goes with Fergus?(换行)，string 类型
+b)long double
+c)float
+d)long double
+
+练习2.8
+#include<iostream>
+#include "Sales_item.h"
+
+int main(){
+    std::cout << "2M\n";
+    return 0;
+}
+
+#include<iostream>
+#include "Sales_item.h"
+
+int main(){
+    std::cout << "2\tM\n";
+    return 0;
+}
+
+---------------------2.2.1节练习------------------------
+练习2.9
+a)
+#include<iostream>
+#include "Sales_item.h"
+
+int main(){
+    int input_value;
+    std::cin >> input_value;
+    return 0;
+}
+
+b)
+#include<iostream>
+#include "Sales_item.h"
+
+int main(){
+    double i = {3.14};
+    return 0;
+}
+
+c)
+#include<iostream>
+#include "Sales_item.h"
+
+int main(){
+    double salary;
+    double wage = salary = 9999.999;
+    return 0;
+}
+
+d)
+#include<iostream>
+#include "Sales_item.h"
+
+int main(){
+    double i = 3.14;
+    return 0;
+}
+
+练习2.10
