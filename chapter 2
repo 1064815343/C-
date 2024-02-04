@@ -37,10 +37,10 @@ int main(){
 
 ---------------------2.1.3节练习------------------------
 练习2.5
-1) 'a':char  L'a':宽字符  "a":string  L"a":宽字符串
-2)  10:int   10u:unsigned int  10L:long  10uL:unsigned long  012:八进制  0xc:十六进制
+1) 'a':字符字面值  L'a':宽字符字面值  "a":字符串字面值  L"a":宽字符串字面值
+2)  10:十进制整型   10u:十进制无符号整型  10L:十进制长整型 10uL:十进制无符号长整型  012:八进制整型  0xc:十六进制整型
 3)  3.14:float  3.14f:float  3.14L:long double
-4)  10:int  10u:unsigned int  10.:     10e-2:float
+4)  10:int  10u:unsigned int  10.:float  10e-2:float
 
 练习2.6
 有区别，第一行是二进制，第二行是八进制
