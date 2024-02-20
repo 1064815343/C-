@@ -217,3 +217,218 @@ int main()
 练习3.10
 合法，const char
 
+---------------------3.3.1节练习------------------------
+练习3.12
+a)应改为vector<vector<int> > ivec
+b)拷贝ivec的元素
+c)创建10个字符串为“null”的容器
+
+练习3.13
+a)0
+b)10个0
+c)10个42
+d)1个10
+e)10，42
+f)10个空字符串
+g)10个“hi”
+
+---------------------3.3.2节练习------------------------
+练习3.14
+#include<iostream>
+#include<string>
+#include<vector>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+
+int main()
+{
+    vector<int> v1;
+    int i;
+    while (cin >> i)
+        v1.push_back(i);
+    return 0;
+}
+
+练习3.15
+#include<iostream>
+#include<string>
+#include<vector>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+
+int main()
+{
+    vector<string> v1;
+    string i;
+    while (cin >> i)
+        v1.push_back(i);
+    return 0;
+}
+
+---------------------3.3.3节练习------------------------
+练习3.16
+#include<iostream>
+#include<string>
+#include<vector>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+
+int main()
+{
+    vector<int> v1;
+    vector<int> v2(10);
+    vector<int> v3(10, 42);
+    vector<int> v4{ 10 };
+    vector<int> v5{ 10, 42 };
+    vector<string> v6{ 10 };
+    vector<string> v7{ 10, "hi" };
+
+    cout << "v1 size :" << v1.size() << endl;
+    cout << "v2 size :" << v2.size() << endl;
+    cout << "v3 size :" << v3.size() << endl;
+    cout << "v4 size :" << v4.size() << endl;
+    cout << "v5 size :" << v5.size() << endl;
+    cout << "v6 size :" << v6.size() << endl;
+    cout << "v7 size :" << v7.size() << endl;
+
+    for (auto i : v1)
+    {
+        cout << i << " , ";
+    }
+    cout << endl;
+    for (auto i : v2)
+    {
+        cout << i << " , ";
+    }
+    cout << endl;
+    for (auto i : v3)
+    {
+        cout << i << " , ";
+    }
+    cout << endl;
+    for (auto i : v4)
+    {
+        cout << i << " , ";
+    }
+    cout << endl;
+    for (auto i : v5)
+    {
+        cout << i << " , ";
+    }
+    cout << endl;
+    for (auto i : v6)
+    {
+        cout << i << " , ";
+    }
+    cout << endl;
+    for (auto i : v7)
+    {
+        cout << i << " , ";
+    }
+    cout << endl;
+    return 0;
+}
+
+练习3.17
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+
+int main()
+{
+   vector<string> v1;
+   string i;
+   while (cin >> i){
+       v1.push_back(i);
+   }
+   for (auto &str : v1){
+       for (auto &c1 : str)
+       c1 = toupper(c1);
+   }
+   for (auto c2 : v1){
+        cout << i << endl;
+    }
+   return 0;
+}
+
+练习3.18
+修改为:
+vector<int> ivec;
+ivec.push_back(42);
+for (auto c : ivec)
+    cout << c;
+return 0
+
+练习3.19
+vector<int> v1(10,42);
+vector<int> v2{42,42,42,42,42,42,42,42,42,42};
+vector<int> v3;
+for (int i = 0; i < 10; ++i)
+    v3.push_back(42); 
+第一种方法最好
+
+练习3.20
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+
+int main()
+{
+   vector<int> v1;
+   int i;
+   while (cin >> i)
+       v1.push_back(i);
+   for (decltype(v1.size()) c = 0; i < v1.size(); i++){
+       cout << v1[i] + v1[i+1];
+   }
+   return 0;
+}
+
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+
+int main()
+{
+   vector<int> v1;
+   int i;
+   while (cin >> i)
+       v1.push_back(i);
+   for (decltype(v1.size()) c = 0; i < v1.size(); i++){
+       cout << v1[i] + v1[v1.size()-1-i];
+   }
+   return 0;
+}
+
+---------------------3.4.1节练习------------------------
