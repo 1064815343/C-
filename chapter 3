@@ -140,9 +140,80 @@ using std::cout;
 int main()
 {
     string s1;
-    cin >> s1;
+    getline(cin, s1);
     for (auto &c : s1)
         c = 'X';
     cout << s1;
     return 0;
 }
+
+练习3.7
+不会变为XXXX
+
+练习3.8
+while:
+#include<iostream>
+#include<string>
+
+using std::string;
+using std::cin;
+using std::cout;
+
+int main()
+{
+    string s1;
+    getline(cin, s1);
+    decltype(s1.size()) i = 0;
+    while(i < s1.size()){
+        s1[i] = 'X';
+        i++;
+    }
+    cout << s1;
+    return 0;
+}
+
+for:
+#include<iostream>
+#include<string>
+
+using std::string;
+using std::cin;
+using std::cout;
+
+int main()
+{
+    string s1;
+    getline(cin, s1);
+    for (decltype(s1.size()) i = 0;i != s1.size();i++)
+        s1[i] = 'X';
+    cout << s1;
+    return 0;
+}
+
+练习3.9
+不合法,不能使用下标访问空字符串
+
+练习3.10
+#include<iostream>
+#include<string>
+
+using std::string;
+using std::cin;
+using std::cout;
+
+int main()
+{
+    string s1,s2;
+    getline(cin, s1);
+    for (auto &c: s1){
+        if (!ispunct(c)){
+            s2 += c;
+        }
+    }
+    cout << s2;
+    return 0;
+}
+
+练习3.10
+合法，const char
+
