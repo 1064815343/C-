@@ -481,3 +481,398 @@ int main()
    return 0;
 }
 
+练习2.22
+
+练习2.23
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+
+int main()
+{
+   vector<int> v1(10,8);
+   for (auto i = v1.begin(); i != v1.end(); i++)
+       *i = *i * 2;
+   for (auto a : v1)
+       cout << a << " ";
+   return 0;
+}
+
+---------------------3.4.2节练习------------------------
+练习3.24
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+
+int main()
+{
+   vector<int> v1(10,8);
+   for (auto i = v1.begin(); i != v1.end() - 1; i++)
+       cout << *i + *(i+1);
+   return 0;
+}
+
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+
+int main()
+{
+   vector<int> v1(10,8);
+   auto e = v1.end();
+   for (auto i = v1.begin(); i != v1.end() - 1; i++){
+       cout << *i + *(e - 1);
+       e--;
+   }
+   return 0;
+}
+
+练习3.25
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+
+int main()
+{
+    vector<unsigned> scores(11, 0);
+    unsigned grade;
+    while (cin >> grade)
+    {
+        if (grade <= 100)
+            ++*(scores.begin() + grade / 10);
+    }
+
+    for (auto s : scores)
+        cout << s << " ";
+   return 0;
+}
+
+练习3.26
+因为两个迭代器相互之间支持的运算只有 - ，而没有 + 。 但是迭代器和迭代器差值（整数值）之间支持 +。
+
+---------------------3.5.1节练习------------------------
+练习3.27
+a)非法，不是常量表达式
+b)合法
+c)非法
+d)非法，空间不足
+
+练习3.28
+空字符串
+0
+空字符串
+0
+
+练习3.29
+需要提前规定数组大小，一经确定，无法更改。无法通过拷贝创建数组
+
+---------------------3.5.2节练习------------------------
+练习3.30
+<=修改为<
+
+练习3.31
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+
+int main()
+{
+    int a[10];
+    for (int i = 0; i < 10; i++)
+        a[i] = i;
+    for (auto i: a){
+        cout << a[i] << " ";
+    }
+   return 0;
+}
+
+练习3.32
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+
+int main()
+{
+    int a[10],b[10];
+    for (int i = 0; i < 10; i++)
+        a[i] = i;
+    for (int j = 0; j < 10; j++)
+        b[j] = a[j];
+    for (auto i: a){
+        cout << b[i] << " ";
+    }
+   return 0;
+}
+
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+
+int main()
+{
+    vector<int> v(10);
+    for (int i = 0; i != 10; ++i) v[i] = arr[i];
+    vector<int> v2(v);
+    for (auto i : v2) cout << i << " ";
+    return 0;
+}
+
+练习3.33
+数组中所有元素的值将会未定义
+
+---------------------3.5.3节练习------------------------
+练习3.34
+将 p1 移动到 p2 的位置。若p1和p2指向的不是同一数组，则非法。
+
+练习3.35
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+using std::begin;
+using std::end;
+
+int main()
+{
+    int a[10];
+    for (auto i = begin(a); i != end(a); ++i){
+        *i = 0;
+    }
+    for (auto i : a) cout << i << " ";
+    return 0;
+}
+
+练习3.36
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+using std::begin;
+using std::end;
+
+int main()
+{
+    int a[10] = {1,2,3,4,5,6,7,8,9,0};
+    int b[10] = {1,2,3,4,5,6,7,8,9,0};
+    auto i = begin(a);
+    auto j = begin(b);
+    while (i != end(a)){
+        if (*i == *j){
+            i++;
+            j++;
+        }
+        else
+            break;
+    }
+    if(j != end(b))
+        cout << "different" << endl;
+    else
+        cout << "same" << endl;
+    return 0;
+}
+
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+using std::begin;
+using std::end;
+
+int main()
+{
+    vector<int> a(10,5);
+    vector<int> b(10,4);
+    auto i = a.begin();
+    auto j = b.begin();
+    while (i != a.end()){
+        if (*i == *j){
+            i++;
+            j++;
+        }
+        else
+            break;
+    }
+    if(j != b.end())
+        cout << "different" << endl;
+    else
+        cout << "same" << endl;
+    return 0;
+}
+
+---------------------3.5.4节练习------------------------
+练习3.37
+输出:hello，但没有空字符存在，无法跳出循环
+
+练习3.38
+两个地址相加所指向的位置是未知的
+
+练习3.39
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+using std::begin;
+using std::end;
+
+int main()
+{
+    string s1 = "hello";
+    string s2 = "world";
+    if(s1 > s2)
+        cout << "s1" << endl;
+    else
+        cout << "s2" << endl;
+    return 0;
+}
+
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+#include<cstring>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+using std::begin;
+using std::end;
+
+int main()
+{
+    const char* s1 = "hello";
+    const char* s2 = "world";
+    auto result = strcmp(s1, s2);
+    if(s1 > s2)
+        cout << "s1" << endl;
+    else
+        cout << "s2" << endl;
+    return 0;
+}
+
+---------------------3.5.5节练习------------------------
+练习3.41
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+#include<cstring>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+using std::begin;
+using std::end;
+
+int main()
+{
+   int int_arr[10] = {1,2,3,4,5,6,7,8,9,0};
+   vector<int> v1(begin(int_arr), end(int_arr));
+   for (auto i : v1)
+       cout << i << " ";
+    return 0;
+}
+
+练习3.42
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cctype>
+#include<cstring>
+
+using std::string;
+using std::cin;
+using std::cout;
+using std::vector;
+using std::endl;
+using std::begin;
+using std::end;
+
+int main()
+{
+    vector<int> v1 = {1,2,3,4,5,6,7,8,9,0};
+    int s[10];
+    for (int i = 0; i < v1.size(); i++)
+        s[i] = v1[i];
+   for (auto i : v1)
+       cout << i << " ";
+    return 0;
+}
+
+---------------------3.6节练习------------------------
